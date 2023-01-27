@@ -1,11 +1,27 @@
 body {
+  background-color: lightgray;
+}
+
+main {
   margin: 1em;
 }
-.carosello {
+.carosello,
+.favourite,
+.randomSongs {
   display: flex;
   justify-content: center;
 }
-.foto-carousel {
+
+.carousel-inner {
+  width: 400px;
+  height: 400px;
+}
+
+h1 {
   display: flex;
   justify-content: center;
+}
+
+h3 {
+  text-align: center;
 }

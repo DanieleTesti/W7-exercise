@@ -14,8 +14,6 @@ const fetchByQuery = async (query) => {
 const prendiCanzone = async function () {
   try {
     const res = await fetchByQuery("vasco rossi");
-    // const { data: canzoni } = await res.json();
-    // console.log(canzoni);
     for (let i = 0; i < 4; i++) {
       let song = res[i];
       contenitorecard.innerHTML += `
@@ -24,7 +22,7 @@ const prendiCanzone = async function () {
           <img class="card-img-top mt-3 img-fluid w-100" style="height:420px" src="${song.album.cover_medium}" alt="Card image cap">
           <div class="card-body d-flex flex-column align-items-center justify-content-between  ">
             <h5 class="card-title">${song.title} </h5>
-            <p class="card-text">${song.artist.name} </p>
+            <p class="card-text">Artist: ${song.artist.name} </p>
             <a id="skip" href="${song.link}" class="btn btn-dark">Prewiew</a>
           </div>
         </div>
@@ -51,7 +49,7 @@ async function favouriteSong() {
   <img class="card-img-top mt-3 img-fluid w-100" style="height:420px" src="${song.album.cover_medium}" alt="Card image cap">
   <div class="card-body d-flex flex-column align-items-center justify-content-between  ">
   <h5 class="card-title">${song.title} </h5>
-  <p class="card-text">${song.artist.name} </p>
+  <p class="card-text">Artist: ${song.artist.name} </p>
   <a id="skip" href="${song.link}" class="btn btn-dark">Prewiew</a>
   </div>
   </div>
@@ -65,7 +63,11 @@ favouriteSong();
 
 async function favouriteAlbum() {
   try {
-    const arrayDiQuery = ["nonostante tutto", "eclissi gemitaiz", "ali iltre"];
+    const arrayDiQuery = [
+      "eminem curtain call",
+      "nonostante tutto",
+      "ali iltre",
+    ];
     for (let i = 0; i < arrayDiQuery.length; i++) {
       const singolaQuery = arrayDiQuery[i];
       let [canzone] = await fetchByQuery(singolaQuery);
@@ -83,16 +85,21 @@ async function favouriteAlbum() {
 }
 favouriteAlbum();
 
-//   const response = await fetch(
-//     "https://striveschool-api.herokuapp.com/api/deezer/search?q=nonostante%20tutto%20gemitaiz"
-//   );
-//   const data = await response.json();
-//   const song1 = data.data.find(
-//     (song1) => song1.album.title === "Nonostante Tutto"
-//   );
-//   carosello.innerHTML += `<div class="carousel-item ${i == 0 ? "active" : " "}
-//     ">
-//     <img src= "${song1.album.cover}" class ="d-block w-100"
-//     </div>
-//     `;
-// }
+// const ordinazione = async function () {
+//   let titoli = prendiCanzone();
+//   let sorted =
+//     titoli.sort /
+//     ((a, b) => {
+//       return a.rank - b.rank;
+//     });
+//   console.log(sorted);
+//   let alert = document.querySelector(".alert ul.canzoniOrdinate");
+//   alert.innerHTML = "";
+//   sorted.forEach((canzone) => {
+//     alert.innerHTML += `<li class='list-group-item'>
+//       ${canzone.titolo} - ${canzone.rank}
+//       </li>`;
+//   });
+// };
+
+// ordinazione();
