@@ -85,21 +85,19 @@ async function favouriteAlbum() {
 }
 favouriteAlbum();
 
-// const ordinazione = async function () {
-//   let titoli = prendiCanzone();
-//   let sorted =
-//     titoli.sort /
-//     ((a, b) => {
-//       return a.rank - b.rank;
-//     });
-//   console.log(sorted);
-//   let alert = document.querySelector(".alert ul.canzoniOrdinate");
-//   alert.innerHTML = "";
-//   sorted.forEach((canzone) => {
-//     alert.innerHTML += `<li class='list-group-item'>
-//       ${canzone.titolo} - ${canzone.rank}
-//       </li>`;
-//   });
-// };
+const ordinazione = async function () {
+  let titoli = prendiCanzone();
+  let sorted = titoli.sort((a, b) => {
+    return a.rank - b.rank;
+  });
+  console.log(sorted);
+  let alert = document.querySelector("canzoniOrdinate");
+  alert.innerHTML = "";
+  sorted.forEach((canzone) => {
+    alert.innerHTML += `<li class='list-group-item'>
+      ${canzone.titolo} - ${canzone.rank}
+      </li>`;
+  });
+};
 
-// ordinazione();
+ordinazione();

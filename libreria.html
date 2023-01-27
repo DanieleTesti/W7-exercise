@@ -35,6 +35,9 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  Launch demo modal
+                </button>
                 <li><a class="dropdown-item" href="#">Action</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
@@ -96,9 +99,7 @@
 </main>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -110,7 +111,7 @@
           onclick="ordinazione()"></button>
       </div>
       <div class="modal-body">
-        ...
+        <ul class="canzoniOrdinate"></ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
