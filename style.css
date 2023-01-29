@@ -1,9 +1,23 @@
 body {
-  background-color: lightgray;
+  background: rgb(195, 34, 34);
+  background: linear-gradient(0deg, rgb(195, 34, 34) 0%, rgb(251, 45, 253) 100%);
 }
 
 main {
   margin: 1em;
+}
+
+img {
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px #000;
+}
+
+.carousel-inner {
+  box-shadow: 5px 5px 15px 5px #000;
+}
+
+.forma-carta {
+  display: contents;
 }
 
 .carosello,
